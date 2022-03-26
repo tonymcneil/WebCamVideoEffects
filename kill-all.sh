@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pgrep ffmpeg | xargs kill
+pgrep ffmpeg | xargs -I {} kill {}
