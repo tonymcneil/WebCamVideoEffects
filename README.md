@@ -38,13 +38,8 @@ The video manipulation module that allows installation of a virtual video loopba
     sudo depmod -a
     sudo modprobe v4l2loopback
 
-    # list device
+    # list devices (ensure the nde "Dummy" loopback device is present)
     v4l2-ctl --list-devices
-
-    # get dummy camera device into a env var
-    export VIRTUAL_CAM=/dev/$(ls -1 /sys/devices/virtual/video4linux)
-    # or..
-    # export VIRTUAL_CAM=$(v4l2-ctl --list-devices | grep -A 1 "Dummy" | tail -1 | tr -d "\t")
 
     # loading module after reboot (saves doing the modprobe command after each reboot)
     sudo echo "v4l2loopback" > /etc/modules-load.d/v4l2loopback.conf 
@@ -63,10 +58,13 @@ Helper scripts have been created to provide a curated set of effect processing p
 
 ## running effects
 
-Video effects can be run in the background using the convention `./vid-${effect-name}.sh`
+Video effects can be run in the background using the convention `./v-${effect-name}.sh`
 
-    # e.g. display static image of the "one does not simply..." meme
-    ./vid-simply.sh
+    # e.g. display static image of the "one does not simply..." meme:
+    ./v-simply.sh
+
+    # e.g. stream the default real cam to the virtual cam (i.e. no effects):
+    ./v-simply.sh
 
 ## killing effects
 
