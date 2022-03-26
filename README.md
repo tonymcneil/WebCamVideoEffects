@@ -29,6 +29,10 @@ The video manipulation module that allows installation of a virtual video loopba
     sudo make install
     sudo cp v4l2loopback.ko /lib/modules/$(uname -r)
 
+## other tools
+
+    sudo apt install -y v4l-utils
+
 ### post install config steps
 
     sudo depmod -a
