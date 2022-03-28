@@ -43,6 +43,7 @@ The video manipulation module that allows installation of a virtual video loopba
 
     # loading module after reboot (saves doing the modprobe command after each reboot)
     sudo echo "v4l2loopback" > /etc/modules-load.d/v4l2loopback.conf 
+    # try "v4l2loopback exclusive_caps=1" if having issues with chrome
 
 ## frei0r (video effects lib/plugins/api)
 
