@@ -61,11 +61,11 @@ Helper scripts have been created to provide a curated set of effect processing p
 
 Video effects can be run in the background using the convention `./v-${effect-name}.sh`
 
-    # e.g. display static image of the "one does not simply..." meme:
-    ./v-simply.sh
+    # e.g. stream vertigo effect:
+    ./v-vertigo.sh
 
     # e.g. stream the default real cam to the virtual cam (i.e. no effects):
-    ./v-simply.sh
+    ./v-default.sh
 
 ## killing effects
 
